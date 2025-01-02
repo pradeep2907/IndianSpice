@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>South Indian Spice - Indian Cuisine</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>South Indian Spice</h1>
+            <p>Traditional Indian Flavors with a Modern Twist</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero">
+            <h2>Welcome to South Indian Spice</h2>
+            <h2>Coming Soon</h2>
+            <p>Delight in the authentic tastes of India with our aromatic spices and vibrant dishes.</p><br>
+            <button><a href="#menu">Explore Our Menu</a></button>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+          <div class="menu-item" data-name="Dal Tadka" data-price="160.99">
+            <img src="Assets/dal.jpg" alt="Dal Tadka">
+            <h3>Dal Tadka</h3>
+            <p>A comforting and flavorful yellow lentil dish, tempered with ghee, cumin, garlic, and a mix of spices, creating a rich and aromatic curry. Perfectly paired with rice or flatbreads.</p>
+            <p>₹160.99</p>
+            <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="menu-item" data-name="Paneer Butter Masala" data-price="200.99">
+                <img src="Assets/paneer.jpg" alt="Paneer Butter Masala">
+                <h3>Paneer Butter Masala</h3>
+                <p>A rich and creamy curry made with tender paneer cubes, simmered in a luscious tomato-based sauce, infused with aromatic spices and finished with a dollop of butter. Perfectly paired with naan or rice.</p>
+                <p>₹200.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more menu items as needed -->
+            <div class="menu-item" data-name="Veg Do Pyaza" data-price="200.99">
+                <img src="Assets/dopyaza.jpg" alt="Veg Do Pyaza">
+                <h3>Veg Do Pyaza</h3>
+                <p>A flavorful vegetable medley cooked in a spiced onion-based gravy, with a generous amount of onions added at two stages for a rich, tangy taste. A perfect balance of texture and taste, served with roti or rice.</p>
+                <p>₹220.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+    </section>
+
+    <!-- Cart Section -->
+   <!-- <section id="cart">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <p>No items in the cart yet.</p>
+        </div>
+        <p>Total: ₹<span id="total-amount">0.00</span></p>
+        <button id="checkout-button" disabled>Proceed to Checkout</button>
+    </section>-->
+
+    <!-- Payment Section -->
+   <!-- <section id="payment">
+        <h2>Complete Your Payment</h2>
+        <form id="payment-form" method="POST" action="/process-payment">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Your Email:</label>
+                <input type="phone" id="phone" name="phone" placeholder="Enter your Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Your Address:</label><br>
+                <input type="address" id="address" name="address" placeholder="Enter your Flat Number/ Building Number" required><br>
+                <input type="address1" id="address1" name="address1" placeholder="Enter your Address" required><br>
+                <input type="address2" id="address2" name="address2" placeholder="Enter your City" required><br>
+                <input type="address3" id="address3" name="address3" placeholder="Enter your PinCode" required><br>
+            </div> 
+        </section>
+        <section>
+            <div class="form-group">
+                <label for="order_amount">Order Amount:</label>
+                <input type="number" id="order_amount" name="order_amount" placeholder="Amount to Pay" required readonly>
+            </div>
+
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>-->
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>At South Indian Spice, we take pride in offering the best of Indian cuisine. Our chefs bring years of experience to create flavorful dishes with the freshest ingredients. Our recipes are rooted in tradition but are given a modern twist for a unique dining experience.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Got questions or want to make a reservation? Reach out to us!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+           
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 South Indian Spice | All Rights Reserved</p>
+        <p>Follow us on: 
+            <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+    <script>
+        // JavaScript to handle cart functionality
+        let cart = [];
+        const cartItems = document.getElementById("cart-items");
+        const totalAmountElement = document.getElementById("total-amount");
+        const checkoutButton = document.getElementById("checkout-button");
+        const orderAmountField = document.getElementById("order_amount");
+
+        document.querySelectorAll(".add-to-cart").forEach(button => {
+            button.addEventListener("click", (event) => {
+                const menuItem = event.target.closest(".menu-item");
+                const itemName = menuItem.getAttribute("data-name");
+                const itemPrice = parseFloat(menuItem.getAttribute("data-price"));
+
+                // Check if the item is already in the cart
+                let itemInCart = cart.find(item => item.name === itemName);
+
+                if (itemInCart) {
+                    // If item is already in the cart, increase the quantity
+                    itemInCart.quantity += 1;
+                } else {
+                    // Otherwise, add the item with quantity 1
+                    cart.push({ name: itemName, price: itemPrice, quantity: 1 });
+                }
+
+                // Update cart display
+                updateCart();
+            });
+        });
+
+        // Decrease quantity functionality
+        function decreaseQuantity(itemName) {
+            let itemInCart = cart.find(item => item.name === itemName);
+            if (itemInCart && itemInCart.quantity > 1) {
+                itemInCart.quantity -= 1;
+            } else {
+                // Remove item from cart if quantity is 1 or less
+                cart = cart.filter(item => item.name !== itemName);
+            }
+
+            // Update cart display
+            updateCart();
+        }
+
+        // Update the cart display and total amount
+        function updateCart() {
+            cartItems.innerHTML = "";
+            let totalAmount = 0;
+
+            cart.forEach(item => {
+                const itemElement = document.createElement("div");
+                itemElement.innerHTML = `
+                    ${item.name} - $${item.price.toFixed(2)} x ${item.quantity} 
+                    <button onclick="decreaseQuantity('${item.name}')">-</button>
+                `;
+                cartItems.appendChild(itemElement);
+                totalAmount += item.price * item.quantity;
+            });
+
+            // Update total amount
+            totalAmountElement.textContent = totalAmount.toFixed(2);
+            orderAmountField.value = totalAmount.toFixed(2); // Update order amount in the payment form
+
+            // Enable checkout button if cart is not empty
+            if (cart.length > 0) {
+                checkoutButton.disabled = false;
+            } else {
+                checkoutButton.disabled = true;
+            }
+        }
+    </script>
+
+</body>
+</html>
