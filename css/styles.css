@@ -9,14 +9,15 @@ body, h1, h2, h3, p, ul, li, button, a {
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f9f3e1; /* Light beige background */
+    background-color: #f9f3e1;
+    /* background-color: #f9f3e1; Light beige background */
     color: #333;
     overflow-x: hidden;
 }
 
 /* Header Section */
 header {
-    background-color: #c0392b; /* Rich red color */
+    background-color: #4CAF50; /* Rich red color */
     color: #fff;
     padding: 20px;
     text-align: center;
